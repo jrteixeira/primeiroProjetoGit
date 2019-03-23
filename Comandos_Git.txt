@@ -1,0 +1,40 @@
+GitHub
+
+comandos-
+
+// configura email
+git config --global user.email "jrtn.teixeira@gmail.com"
+
+// configura nome
+git config --global user.name "Jose roberto teixeira neto"
+
+// git clone + link do projeto - adiciona projeto à pasta git
+git clone https://github.com/jrteixeira/primeiroProjetoGit.git
+
+// mostra sua localização atual
+pwd
+
+// lista os documentos da pasta em que esta
+ls
+
+// cd +(nome do arquivo) entra no arquivo 
+cd primeiroProjetoGit
+
+// mostra o status do arquivo
+git status
+
+// modifica o arquivo temporariamente
+git add README.md
+
+// modifica todos os arquivo temporariamente
+git add .
+
+
+// git commit -m "mensagem que quiser" coloca o arquivo em uma area temporaria 
+git commit -m "alterando arquivo git"
+
+// Sobe a atualização para o github
+git push -u origin master
+
+// puxa as atualizaçoes dos aquivos
+git pull
