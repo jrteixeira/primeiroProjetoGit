@@ -8,6 +8,8 @@ public class Pessoa implements IPessoa {
 	private int idade;
 	private double peso;
 	private double altura;
+	private double imc;
+	
 	
 	public Pessoa() {
 		
@@ -51,25 +53,64 @@ public class Pessoa implements IPessoa {
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
+	
+	
+
 
 	@Override
 	public String exibirDados() {
 		// TODO Auto-generated method stub
 		toString();
-		String message = toString() +  "imc: " + calculaImc();
+		String message = toString() +  "\nimc: " + calculaImc();
 		return message;
 	}
 
 	@Override
 	public double calculaImc() {
 		// TODO Auto-generated method stub
-		double imc = peso / (altura * altura);
+		 imc = peso / (altura * altura);
 		return imc;
+	}
+	
+	public void verificaImc() {
+		calculaImc();
+		if (imc < 17) {
+		String message = "Seu imc é: " + imc + "\n Voce esta muito abaixo do peso!!";
+		System.out.println(message);
+		}
+			if (17 <=imc && imc <= 18.49) {
+			String message = "Seu imc é: " + imc + "\n Voce esta abaixo do peso!!";
+			System.out.println(message);
+			}	
+				if (18.49 <imc && imc <= 24.99) {
+				String message = "Seu imc é: " + imc + "\n Voce esta com o peso normal!!";
+				System.out.println(message);
+				}
+					if (24.99 <imc && imc <= 29.99) {
+					String message = "Seu imc é: " + imc + "\n Voce esta acima do peso!!";
+					System.out.println(message);
+					}
+						if (29.99 <imc && imc <= 34.99) {
+						String message = "Seu imc é: " + imc + "\n Voce esta com obesidade nivel 1, cuidado!!";
+						System.out.println(message);
+						}
+							if (34.99 <imc && imc <= 39.99) {
+							String message = "Seu imc é: " + imc + "\n Voce esta com obesidade nivel 2 (severa), cuidado!!";
+							System.out.println(message);
+							}
+							if (imc >= 40) {
+								String message = "Seu imc é: " + imc + "\n Voce esta com obesidade nivel 3 (mórbida), cuidado!!";
+								System.out.println(message);
+								}
+		
 	}
 
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", idade=" + idade + ", peso=" + peso + ", altura=" + altura + "]";
+		return "Nome: " + nome + 
+				"\nIdade: " + idade + 
+				"\nPeso: " + peso + 
+				"\nAltura: " + altura;
 	}
 
 }
